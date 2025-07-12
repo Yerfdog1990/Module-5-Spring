@@ -1,4 +1,4 @@
-package dependency_injection.model.entity;
+package dependency_injection.constructor_injection.model.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

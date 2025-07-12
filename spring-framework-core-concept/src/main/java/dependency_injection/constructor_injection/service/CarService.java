@@ -1,7 +1,7 @@
-package dependency_injection.service;
+package dependency_injection.constructor_injection.service;
 
-import dependency_injection.model.entity.Car;
-import dependency_injection.model.repository.ICarRepository;
+import dependency_injection.constructor_injection.model.entity.Car;
+import dependency_injection.constructor_injection.model.repository.ICarRepository;
 
 import java.util.List;
 
