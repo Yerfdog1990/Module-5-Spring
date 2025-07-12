@@ -8,6 +8,7 @@ import java.util.List;
 public class CarService {
     private final ICarRepository carRepository;
 
+    // Constructor injection
     public CarService(ICarRepository carRepository) {
         this.carRepository = carRepository;
     }
