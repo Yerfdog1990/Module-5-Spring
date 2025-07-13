@@ -1,4 +1,4 @@
-package nested_class;
+package IoC.nested_class;
 
 public class SpringBeanService {
     public static class NestedClass {
