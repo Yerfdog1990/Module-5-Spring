@@ -1,4 +1,4 @@
-package IoC.nested_class;
+package IoC.nested_class_method;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

@@ -1,6 +1,6 @@
 package IoC.instance_factory_method;
 
-import IoC.nested_class.SpringBeanService;
+import IoC.nested_class_method.SpringBeanService;
 import org.springframework.context.ApplicationContext;
 
 public class NestedClass extends XmlDemo{
