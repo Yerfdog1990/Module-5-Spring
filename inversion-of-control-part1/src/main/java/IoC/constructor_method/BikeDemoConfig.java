@@ -1,0 +1,14 @@
+package IoC.constructor_method;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan("IoC.constructor_method")
+public class BikeDemoConfig {
+    @Bean
+    public Bike bike(BikeInfo info) {
+        return new Bike(info.model(), info.color());
+    }
+}

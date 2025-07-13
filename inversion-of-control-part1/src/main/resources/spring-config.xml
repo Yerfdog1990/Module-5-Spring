@@ -6,10 +6,10 @@
          http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Bean for the nested class -->
-    <bean id="doAction" class="IoC.nested_class.SpringBeanService$NestedClass" />
+    <bean id="doAction" class="IoC.nested_class_method.SpringBeanService$NestedClass" />
 
     <!-- Bean for NestedClassDemo -->
-    <bean id="demo" class="IoC.nested_class.NestedClassDemo">
+    <bean id="demo" class="IoC.nested_class_method.NestedClassDemo">
         <!-- No explicit dependency on applicationContext is needed -->
     </bean>
     <!-- Bean for TruckFactory Class -->
@@ -17,5 +17,15 @@
     <bean id="truck" factory-bean="truckFactory" factory-method="createTruck">
         <constructor-arg value="Ford Ranger"/>
         <constructor-arg value="Blue"/>
+    </bean>
+    <!-- Bean for CarFactory Class -->
+    <bean id="car" class="IoC.static_factory_method.CarFactory" factory-method="createCar">
+        <constructor-arg value="Ford Ranger"/>
+        <constructor-arg value="Blue"/>
+    </bean>
+    <!-- Bean for CarFactory Class -->
+    <bean id="bike" class="IoC.constructor_method.Bike">
+        <constructor-arg value="Yamaha"/>
+        <constructor-arg value="White"/>
     </bean>
 </beans>
