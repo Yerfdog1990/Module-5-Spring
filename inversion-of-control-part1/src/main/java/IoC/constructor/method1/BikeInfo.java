@@ -1,4 +1,4 @@
-package IoC.constructor_method;
+package IoC.constructor.method1;
 
 import org.springframework.stereotype.Component;
 

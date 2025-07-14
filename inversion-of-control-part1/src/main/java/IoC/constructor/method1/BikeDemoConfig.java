@@ -1,11 +1,11 @@
-package IoC.constructor_method;
+package IoC.constructor.method1;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("IoC.constructor_method")
+@ComponentScan("IoC.constructor")
 public class BikeDemoConfig {
     @Bean
     public Bike bike(BikeInfo info) {
