@@ -1,4 +1,4 @@
-package IoC.constructor_method;
+package IoC.constructor.method1;
 
 import IoC.instance_factory_method.XmlDemo;
 import org.springframework.context.ApplicationContext;
