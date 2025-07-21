@@ -1,4 +1,4 @@
-package demo;
+package demo1;
 
 public class ParentImpl implements IParent{
     @Override

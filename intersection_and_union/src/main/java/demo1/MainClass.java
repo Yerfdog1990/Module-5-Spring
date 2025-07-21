@@ -1,4 +1,4 @@
-package demo;
+package demo1;
 
 public class MainClass {
     // Demonstrate intersection
@@ -33,7 +33,7 @@ public class MainClass {
         demonstrateUnion(new TeacherImpl());
         System.out.println("Calling methods from Parent and Teacher class");
         demonstrateUnion(new ParentImpl());
-        System.out.println("Calling methods from School class");
+        System.out.println("Calling methods from Parent and Teacher class");
         demonstrateIntersection(new School());
     }
 }
