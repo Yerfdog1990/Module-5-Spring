@@ -1,6 +1,5 @@
 package decorator_pattern;
 
-import javax.imageio.IIOException;
 import java.io.*;
 import java.util.Base64;
 import java.util.zip.GZIPInputStream;
@@ -27,7 +26,7 @@ public class CompressionDecorator extends DataSourceDecorator{
     private String compress(String stringData) {
         try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
              GZIPOutputStream gzip = new GZIPOutputStream(bos)) {
-            // Write data and ensure GZIP stream is properly flushed
+            // Write data and ensure the GZIP stream is properly flushed
             gzip.write(stringData.getBytes());
             gzip.finish();
             return Base64.getEncoder().encodeToString(bos.toByteArray());
