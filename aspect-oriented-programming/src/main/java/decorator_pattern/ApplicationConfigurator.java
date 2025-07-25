@@ -17,12 +17,21 @@ public class ApplicationConfigurator {
             source = new CompressionDecorator(source);
         }
 
-        // Writing encrypted + compressed data
-        SalaryManager manager = new SalaryManager(source);
-        manager.save(salaryData);
+        SalaryManager manager = getSalaryManager(source, salaryData);
 
+        extracted(manager);
+    }
+
+    private static void extracted(SalaryManager manager) {
         // Reading back
         String result = manager.load();
         System.out.println("Decrypted & Decompressed Data: " + result);
+    }
+
+    private static SalaryManager getSalaryManager(DataSource source, String salaryData) {
+        // Writing encrypted + compressed data
+        SalaryManager manager = new SalaryManager(source);
+        manager.save(salaryData);
+        return manager;
     }
 }
