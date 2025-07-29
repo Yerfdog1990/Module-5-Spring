@@ -1,19 +1,23 @@
 package springtxdemo.jdbc;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.support.JdbcTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springtxdemo.jdbc.dao.AccountRegistry;
 import springtxdemo.jdbc.dao.JdbcTemplateAccountRegistry;
 import springtxdemo.jdbc.service.AccountService;
+import springtxdemo.jdbc.service.DeclarativeAccountService;
 import springtxdemo.jdbc.service.ProgrammaticAccountService;
 
 import javax.sql.DataSource;
 
 @Configuration
+@EnableTransactionManagement
 public class JdbcDemoConfig {
 
     @Bean
@@ -38,7 +42,14 @@ public class JdbcDemoConfig {
         return new JdbcTransactionManager(dataSource);
     }
     @Bean
-    public AccountService pragmaticAccountService(JdbcTemplate jdbcTemplate, PlatformTransactionManager transactionManager){
+    @Qualifier("programmatic")
+    public AccountService progmaticAccountService(JdbcTemplate jdbcTemplate, PlatformTransactionManager transactionManager){
         return new ProgrammaticAccountService(jdbcTemplate, transactionManager);
     }
+    @Bean
+    @Qualifier("declarative")
+    public AccountService declarativeAccountService(JdbcTemplate jdbcTemplate){
+        return new DeclarativeAccountService(jdbcTemplate);
+    }
+
 }
