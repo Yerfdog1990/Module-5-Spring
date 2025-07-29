@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import springtxdemo.jdbc.JdbcDemoConfig;
@@ -15,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AccountServiceTest {
 
     @Autowired
+    @Qualifier("declarative")
     private AccountService accountService;
 
     @Autowired
@@ -22,6 +24,7 @@ public class AccountServiceTest {
 
     @BeforeEach
     void setUp(){
+        System.out.printf("AccountService type: %s%n", accountService.getClass().getName());
         jdbcTemplate.execute("drop table if exists accounts");
         jdbcTemplate.execute("create table accounts (id integer primary key auto_increment, account_name varchar(255), balance double)");
         jdbcTemplate.update("insert into accounts (id, account_name, balance) values (?, ?, ?)", 1, "John", 100000.0);
