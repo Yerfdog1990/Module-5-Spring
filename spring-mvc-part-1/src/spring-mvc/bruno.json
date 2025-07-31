@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "spring-mvc",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
