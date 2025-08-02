@@ -12,7 +12,7 @@
 
     <!-- Enable Spring MVC annotation support -->
     <context:annotation-config/>
-    <context:component-scan base-package="springmvcdemo"/>
+    <context:component-scan base-package="springmvcdemo1"/>
     <mvc:annotation-driven/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
