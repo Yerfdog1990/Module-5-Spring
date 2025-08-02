@@ -1,4 +1,4 @@
-package springmvcdemo.controller;
+package springmvcdemo1.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

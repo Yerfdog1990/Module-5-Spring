@@ -1,4 +1,4 @@
-package springmvcdemo.controller;
+package springmvcdemo1.controller;
 
 import org.springframework.context.MessageSource;
 import org.springframework.http.MediaType;

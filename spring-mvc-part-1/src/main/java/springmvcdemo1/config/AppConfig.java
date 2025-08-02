@@ -1,4 +1,4 @@
-package springmvcdemo.config;
+package springmvcdemo1.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
