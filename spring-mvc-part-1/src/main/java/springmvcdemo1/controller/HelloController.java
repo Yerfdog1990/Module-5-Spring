@@ -1,6 +1,8 @@
 package springmvcdemo1.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -64,5 +66,19 @@ public class HelloController {
     @ResponseBody
     public String captureHttpSession(HttpSession session){
         return session.getId();
+    }
+    @GetMapping(path = "/user-conflict", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResponseEntity<User> userConflict(){
+        User user = new User("John", 23, "Tired");
+        return ResponseEntity.status(HttpStatus.CONFLICT).header("X-metaverse-realm", "Minecraft").body(user);
+    }
+    @GetMapping(path = "/type-conversion/{age}")
+    public ModelAndView getTypeConversion(ModelAndView modelAndView, @PathVariable int age){
+        modelAndView.setViewName("index");
+        modelAndView.addObject("name", "John");
+        modelAndView.addObject("age", age);
+        modelAndView.addObject("maritalStatus", "Tired");
+        return modelAndView;
     }
 }

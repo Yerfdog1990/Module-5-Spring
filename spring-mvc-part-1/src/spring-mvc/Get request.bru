@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: http://localhost:8080/spring-mvc-part-1/user
+  url: http://localhost:8080/spring-mvc-part-1/user//i18n/{lang}
   body: none
   auth: inherit
+}
+
+headers {
+  Accept-Language: es
 }
 
 settings {
