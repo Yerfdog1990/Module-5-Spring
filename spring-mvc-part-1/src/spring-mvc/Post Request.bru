@@ -5,9 +5,17 @@ meta {
 }
 
 post {
-  url: http://localhost:8080/spring-mvc-part-1/user/post-greeting
-  body: none
+  url: http://localhost:8080/spring-mvc-part-1/user/processed-user
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "name":"John Doe",
+    "age":20,
+    "maritalStatus":"exhausted"
+  }
 }
 
 settings {
