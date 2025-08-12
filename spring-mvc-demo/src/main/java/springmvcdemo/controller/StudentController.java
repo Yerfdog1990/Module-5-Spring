@@ -20,6 +20,7 @@ public class StudentController {
 
   @PostMapping
   public ResponseEntity<String> createStudent(@RequestBody String studentName) {
-    return ResponseEntity.status(HttpStatus.CREATED).body("Student Created: " + studentName);
+      studentName = studentName.replace("\"", "");
+      return ResponseEntity.status(HttpStatus.CREATED).body("Student Created: " + studentName);
   }
 }
