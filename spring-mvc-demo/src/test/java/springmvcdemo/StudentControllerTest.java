@@ -41,7 +41,7 @@ public class StudentControllerTest {
   @Test
   void testCreateStudent() throws Exception {
     mockMvc
-        .perform(post("/students").contentType(MediaType.APPLICATION_JSON).content("John Doe"))
+        .perform(post("/students").contentType(MediaType.APPLICATION_JSON).content("\"John\" \"Doe\""))
         .andExpect(status().isCreated())
         .andExpect(content().string("Student Created: John Doe"));
   }
