@@ -7,6 +7,8 @@ import spring.entity.Task;
 import spring.service.TaskService;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static java.util.Objects.isNull;
 
@@ -24,10 +26,17 @@ public class TaskController {
             @RequestParam(value = "limit", required = false, defaultValue = "10") int limit){
         List<Task> allTasks = taskService.getAllTasks((page - 1) * limit, limit);
         model.addAttribute("tasks", allTasks);
+        int totalPages = (int) Math.ceil(1.0 * taskService.getAllCount() / limit);
+    if (totalPages > 1) {
+      List<Integer> pageNumbers =
+          IntStream.rangeClosed(1, totalPages).boxed().collect(Collectors.toList());
+      model.addAttribute("page_numbers", pageNumbers);
+      model.addAttribute("current_page", page);
+        }
         return "tasks";
     }
     @PostMapping("/{id}")
-    public String editTasks(Model model, @PathVariable Integer id, @PathVariable TaskInfo taskInfo){
+    public String editTasks(Model model, @PathVariable Integer id, @RequestBody TaskInfo taskInfo){
         if(isNull(id) || id <= 0){
             throw new IllegalArgumentException("Task with id " + id + " not found");
         }
@@ -36,6 +45,9 @@ public class TaskController {
     }
     @PostMapping("/")
     public String createTasks(Model model, @RequestBody TaskInfo taskInfo){
+        if (taskInfo == null || taskInfo.getDescription() == null || taskInfo.getStatus() == null) {
+            throw new IllegalArgumentException("Task description and status cannot be null");
+        }
         Task createdTask = taskService.create(taskInfo.getDescription(), taskInfo.getStatus());
         return loadTasks(model, 1, 10);
     }

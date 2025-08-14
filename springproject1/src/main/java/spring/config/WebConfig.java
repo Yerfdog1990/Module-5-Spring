@@ -55,8 +55,12 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/html/**").addResourceLocations("/html/");
-        registry.addResourceHandler("/styles/**").addResourceLocations("/styles/");
-        registry.addResourceHandler("/scripts/**").addResourceLocations("/scripts/");
+        registry.addResourceHandler("/html/**")
+                .addResourceLocations("classpath:/html/", "/WEB-INF/html/", "/html/");
+        registry.addResourceHandler("/styles/**")
+                .addResourceLocations("classpath:/styles/", "/WEB-INF/styles/", "/styles/")
+                .setCachePeriod(0); // Disable caching for faster troubleshooting
+        registry.addResourceHandler("/scripts/**")
+                .addResourceLocations("classpath:/scripts/", "/WEB-INF/scripts/", "/scripts/");
     }
 }
