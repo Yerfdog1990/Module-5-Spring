@@ -1,6 +1,5 @@
 package spring.controller;
 
-import lombok.Data;
 import spring.entity.Status;
 
 
