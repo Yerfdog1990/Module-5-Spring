@@ -35,12 +35,20 @@ public class TaskController {
         }
         return "tasks";
     }
+    // MENTOR We usually use PUT as the HTTP method for updates
     @PostMapping("/{id}")
     public String editTasks(Model model, @PathVariable Integer id, @RequestBody TaskInfo taskInfo){
         if(isNull(id) || id <= 0){
             throw new IllegalArgumentException("Task with id " + id + " not found");
         }
         Task editedTask = taskService.edit(id, taskInfo.getDescription(), taskInfo.getStatus());
+        // MENTOR
+        /*
+          One thing to take into account here: because we are reusing another controller method,
+          the transactional context of the loadTask operation will be different from the one for the update above.
+          In this case, it is not an issue because we want to read the state (tasks) again once the update has
+          been commited. The code is functionally correct in this case.
+         */
         return loadTasks(model, 1, 10);
     }
     @PostMapping("/")
