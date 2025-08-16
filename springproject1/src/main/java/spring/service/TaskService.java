@@ -30,6 +30,9 @@ public class TaskService {
         }
         task.setDescription(description);
         task.setStatus(status);
+        // MENTOR This line is not incorrect, but it is not really necessary
+        // The task instance is in persistent state
+        // Changes in it will be automatically synced with the database when the transaction is commited
         taskDao.saveOrUpdate(task);
         return task;
     }

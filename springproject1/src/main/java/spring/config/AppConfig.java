@@ -58,6 +58,21 @@ public class AppConfig {
     /**
      * Ensures proper cleanup of resources at application shutdown.
      */
+    /*
+      MENTOR
+      The cleanup code in the `@PreDestroy` method is not strictly necessary,
+      but it's a good practice. HikariCP is well-behaved and will automatically close its
+      connection pool when the JVM shuts down. However, explicitly closing it ensures resources
+      are released cleanly and immediately.
+      Also, modern JDBC drivers typically handle their own cleanup. This is mostly a legacy
+      concern from older JDBC drivers that might leak resources.
+      Bottom line: we can safely remove this cleanup code if we're using recent versions of:
+      - HikariCP (2.3.8+)
+      - MySQL Connector/J (8.0+)
+      - A modern JVM
+
+      However, keeping it doesn't hurt and makes the cleanup explicit.
+     */
     @PreDestroy
     public void cleanup() {
         // Close the Hikari DataSource
