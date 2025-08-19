@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0296305-2c7e-4021-9726-d9cd664e5358" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/google-java-format.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-framework/src/main/java/springxmlconfiguration/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-framework/src/main/java/springxmlconfiguration/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-framework/src/main/resources/bean.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/reactordemo/ReactorHelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/reactordemo/ReactorHelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,21 +26,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Yerfdog1990"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Yerfdog1990&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Yerfdog1990/Module-5-Spring.git",
-    "accountId": "0aee39a9-37ae-4592-87ea-89f312ce7d0f"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Yerfdog1990/Module-5-Spring.git&quot;,
+    &quot;accountId&quot;: &quot;0aee39a9-37ae-4592-87ea-89f312ce7d0f&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="31HQ1Fm6MLwYYVLcMxSvkqbcWsv" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -56,6 +55,7 @@
     "Application.WebFluxApp.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
@@ -66,7 +66,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/Users/godfrey/IdeaProjects/Module-5-Courses/Module-5-Spring/spring-webflux-1/src/main/java/org/example/Main.java",
-    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -75,7 +75,6 @@
     <attachedChunks>
       <set>
         <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
-        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
       </set>
     </attachedChunks>
   </component>
@@ -86,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1755178306487</updated>
-      <workItem from="1755178308054" duration="6516000" />
+      <workItem from="1755178308054" duration="9819000" />
     </task>
     <servers />
   </component>
