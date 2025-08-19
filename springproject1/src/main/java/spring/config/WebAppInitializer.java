@@ -1,7 +1,11 @@
 package spring.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-
+// MENTOR
+/*
+As we have discussed, it might be a good idea to replace this with the usual, web.xml and dispatcher-servlet.xml
+based configuration
+ */
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
