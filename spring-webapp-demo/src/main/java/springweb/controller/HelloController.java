@@ -11,4 +11,9 @@ public class HelloController {
   public String hello() {
     return "Hello World from spring web";
   }
+
+  @GetMapping(path = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
+  public UserResponse getUser() {
+    return new UserResponse(1, "John", 25);
+  }
 }
