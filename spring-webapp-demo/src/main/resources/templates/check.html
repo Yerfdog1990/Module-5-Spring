@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>sanity-check</title>
+</head>
+<body>
+<h1 th:text="${message}">Message</h1>
+<p th:text="${dateAndTime != null ? dateAndTime : 'N/A'
+}">Date and time</p>
+</body>
+</html>
