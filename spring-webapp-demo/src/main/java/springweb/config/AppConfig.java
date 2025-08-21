@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.web.servlet.ViewResolver;
@@ -62,7 +63,7 @@ public class AppConfig {
     LocalContainerEntityManagerFactoryBean factoryBean =
         new LocalContainerEntityManagerFactoryBean();
     factoryBean.setDataSource(dataSource);
-    factoryBean.setPackagesToScan("springweb.model");
+    factoryBean.setPackagesToScan("springweb.model.entity");
 
     HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
     vendorAdapter.setGenerateDdl(true);
@@ -73,5 +74,12 @@ public class AppConfig {
     hibernateProperties.put("hibernate.hbm2ddl.auto", "update");
     factoryBean.setJpaPropertyMap(hibernateProperties);
     return factoryBean.getObject();
+  }
+
+  @Bean
+  public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+    JpaTransactionManager transactionManager = new JpaTransactionManager();
+    transactionManager.setEntityManagerFactory(entityManagerFactory);
+    return transactionManager;
   }
 }
