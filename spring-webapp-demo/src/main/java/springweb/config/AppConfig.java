@@ -7,9 +7,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.thymeleaf.spring5.ISpringTemplateEngine;
@@ -21,6 +23,7 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 
 @Configuration
 @EnableWebMvc
+@EnableTransactionManagement
 public class AppConfig {
   @Bean
   public ITemplateResolver templateResolver() {
@@ -51,14 +54,15 @@ public class AppConfig {
   @Bean
   public DataSource dataSource() {
     HikariDataSource dataSource = new HikariDataSource();
-    dataSource.setJdbcUrl(
-        "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'classpath:schema.sql'");
+    dataSource.setDriverClassName("org.h2.Driver");
+    dataSource.setJdbcUrl("jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE");
     dataSource.setUsername("sa");
     dataSource.setPassword("");
     return dataSource;
   }
 
   @Bean
+  @Primary
   public EntityManagerFactory entityManagerFactory(DataSource dataSource) {
     LocalContainerEntityManagerFactoryBean factoryBean =
         new LocalContainerEntityManagerFactoryBean();
@@ -73,6 +77,7 @@ public class AppConfig {
     Map<String, String> hibernateProperties = new HashMap<>();
     hibernateProperties.put("hibernate.hbm2ddl.auto", "update");
     factoryBean.setJpaPropertyMap(hibernateProperties);
+    factoryBean.afterPropertiesSet();
     return factoryBean.getObject();
   }
 

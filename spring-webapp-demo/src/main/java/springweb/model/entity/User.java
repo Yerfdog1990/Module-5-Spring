@@ -1,20 +1,27 @@
-package springweb.controller;
+package springweb.model.entity;
 
-public class UserResponse {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
+public class User {
+  @Id
+  // @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
+
   private String name;
   private Integer age;
 
-  public UserResponse() {
-  }
-
-  public UserResponse(Integer id, String name, Integer age) {
+  public User(Integer id, String name, Integer age) {
     this.id = id;
     this.name = name;
     this.age = age;
   }
 
+  public User() {}
+
   // Getters and Setters
+
   public Integer getId() {
     return id;
   }
