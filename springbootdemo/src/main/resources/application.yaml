@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: springbootdemo
+  jpa:
+    open-in-view: false
+
+app:
+  attribute1: value1
+  attribute2:
+    nestedAtt1: nestedValue1
+    nestedAtt2: nestedValue2
