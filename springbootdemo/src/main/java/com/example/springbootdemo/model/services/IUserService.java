@@ -1,13 +1,14 @@
 package com.example.springbootdemo.model.services;
 
+import com.example.springbootdemo.model.dto.UserDTO;
 import com.example.springbootdemo.model.pojo.UserPOJO;
 import org.springframework.transaction.annotation.Transactional;
 
 public interface IUserService {
-  UserPOJO getUserPOJO();
+    UserPOJO getUserPOJO();
 
-  @Transactional
-  int createUser(String name, Integer age);
+    @Transactional
+    int createUser(String name, Integer age);
 
-  UserDTO getUserById(int id);
+    UserDTO getUserById(int id);
 }

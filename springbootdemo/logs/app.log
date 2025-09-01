@@ -1,0 +1,162 @@
+17:35:35 [main] INFO Starting SpringbootdemoApplication using Java 23.0.2 with PID 23878 (/Users/godfrey/IdeaProjects/Module-5-Courses/Module-5-Spring/springbootdemo/target/classes started by godfrey in /Users/godfrey/IdeaProjects/Module-5-Courses/Module-5-Spring/springbootdemo)
+17:35:35 [main] INFO The following 1 profile is active: "prod"
+17:35:36 [main] INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+17:35:36 [main] INFO Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+17:35:37 [main] INFO Tomcat initialized with port 8080 (http)
+17:35:37 [main] INFO Starting service [Tomcat]
+17:35:37 [main] INFO Starting Servlet engine: [Apache Tomcat/10.1.44]
+17:35:37 [main] INFO Initializing Spring embedded WebApplicationContext
+17:35:37 [main] INFO Root WebApplicationContext: initialization completed in 1355 ms
+17:35:37 [main] INFO HikariPool-1 - Starting...
+17:35:37 [main] INFO HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:edff6cdb-c467-4354-b0e0-746d9562a4a2 user=SA
+17:35:37 [main] INFO HikariPool-1 - Start completed.
+17:35:37 [main] INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+17:35:37 [main] INFO HHH000412: Hibernate ORM core version 6.6.26.Final
+17:35:37 [main] INFO HHH000026: Second-level cache disabled
+17:35:37 [main] INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+17:35:37 [main] INFO HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+17:35:38 [main] INFO HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+17:35:38 [main] INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+17:35:39 [main] INFO Adding welcome page template: index
+17:35:39 [main] INFO Exposing 1 endpoint beneath base path '/actuator'
+17:35:39 [main] INFO Tomcat started on port 8080 (http) with context path '/'
+17:35:39 [main] INFO Started SpringbootdemoApplication in 4.429 seconds (process running for 5.056)
+17:35:39 [RMI TCP Connection(3)-127.0.0.1] INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:35:39 [RMI TCP Connection(3)-127.0.0.1] INFO Initializing Servlet 'dispatcherServlet'
+17:35:39 [RMI TCP Connection(3)-127.0.0.1] INFO Completed initialization in 2 ms
+17:35:48 [http-nio-8080-exec-1] INFO Creating user: NewEntityRequestBody(name=Yerfdog, age=2)
+17:36:01 [http-nio-8080-exec-3] INFO Creating user: NewEntityRequestBody(name=Daddy, age=2)
+17:36:10 [http-nio-8080-exec-5] INFO Creating user: NewEntityRequestBody(name=Godfrey, age=2)
+17:41:37 [SpringApplicationShutdownHook] INFO Commencing graceful shutdown. Waiting for active requests to complete
+17:41:39 [tomcat-shutdown] INFO Graceful shutdown complete
+17:41:39 [SpringApplicationShutdownHook] INFO Closing JPA EntityManagerFactory for persistence unit 'default'
+17:41:39 [SpringApplicationShutdownHook] INFO HikariPool-1 - Shutdown initiated...
+17:41:39 [SpringApplicationShutdownHook] INFO HikariPool-1 - Shutdown completed.
+17:41:42 [main] INFO Starting SpringbootdemoApplication using Java 23.0.2 with PID 23912 (/Users/godfrey/IdeaProjects/Module-5-Courses/Module-5-Spring/springbootdemo/target/classes started by godfrey in /Users/godfrey/IdeaProjects/Module-5-Courses/Module-5-Spring/springbootdemo)
+17:41:42 [main] INFO The following 1 profile is active: "prod"
+17:41:43 [main] INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+17:41:43 [main] INFO Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
+17:41:43 [main] INFO Tomcat initialized with port 8080 (http)
+17:41:43 [main] INFO Starting service [Tomcat]
+17:41:43 [main] INFO Starting Servlet engine: [Apache Tomcat/10.1.44]
+17:41:43 [main] INFO Initializing Spring embedded WebApplicationContext
+17:41:43 [main] INFO Root WebApplicationContext: initialization completed in 1682 ms
+17:41:44 [main] INFO HikariPool-1 - Starting...
+17:41:44 [main] INFO HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bec17228-4a4e-4998-8ec4-d98635937c6c user=SA
+17:41:44 [main] INFO HikariPool-1 - Start completed.
+17:41:44 [main] INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+17:41:44 [main] INFO HHH000412: Hibernate ORM core version 6.6.26.Final
+17:41:44 [main] INFO HHH000026: Second-level cache disabled
+17:41:44 [main] INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+17:41:44 [main] INFO HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+17:41:45 [main] INFO HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+17:41:45 [main] INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+17:41:45 [main] INFO Adding welcome page template: index
+17:41:46 [main] INFO Exposing 1 endpoint beneath base path '/actuator'
+17:41:46 [main] INFO Tomcat started on port 8080 (http) with context path '/'
+17:41:46 [main] INFO Started SpringbootdemoApplication in 5.118 seconds (process running for 5.77)
+17:41:46 [RMI TCP Connection(1)-127.0.0.1] INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:41:46 [RMI TCP Connection(1)-127.0.0.1] INFO Initializing Servlet 'dispatcherServlet'
+17:41:46 [RMI TCP Connection(1)-127.0.0.1] INFO Completed initialization in 1 ms
+17:41:57 [http-nio-8080-exec-1] INFO Creating user: NewEntityRequestBody(name=Godfrey, age=2)
+17:42:09 [http-nio-8080-exec-3] INFO Creating user: NewEntityRequestBody(name=George, age=2)
+17:42:23 [http-nio-8080-exec-5] INFO Creating user: NewEntityRequestBody(name=Yerfdog, age=2)
+17:42:32 [http-nio-8080-exec-7] INFO Getting user with id: 1
+17:42:42 [http-nio-8080-exec-9] INFO Getting user with id: 2
+17:42:46 [http-nio-8080-exec-10] INFO Getting user with id: 2
+17:42:53 [http-nio-8080-exec-2] INFO Getting user with id: 3
+17:49:37 [SpringApplicationShutdownHook] INFO Commencing graceful shutdown. Waiting for active requests to complete
+17:49:39 [tomcat-shutdown] INFO Graceful shutdown complete
+17:49:39 [SpringApplicationShutdownHook] INFO Closing JPA EntityManagerFactory for persistence unit 'default'
+17:49:39 [SpringApplicationShutdownHook] INFO HikariPool-1 - Shutdown initiated...
+17:49:39 [SpringApplicationShutdownHook] INFO HikariPool-1 - Shutdown completed.
+2025-09-01T17:49:42.443+07:00  INFO 23991 --- [springbootdemo] [main] c.e.s.SpringbootdemoApplication          : Starting SpringbootdemoApplication using Java 23.0.2 with PID 23991 (/Users/godfrey/IdeaProjects/Module-5-Courses/Module-5-Spring/springbootdemo/target/classes started by godfrey in /Users/godfrey/IdeaProjects/Module-5-Courses/Module-5-Spring/springbootdemo)
+2025-09-01T17:49:42.445+07:00  INFO 23991 --- [springbootdemo] [main] c.e.s.SpringbootdemoApplication          : The following 1 profile is active: "prod"
+2025-09-01T17:49:43.730+07:00  INFO 23991 --- [springbootdemo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T17:49:43.797+07:00  INFO 23991 --- [springbootdemo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 1 JPA repository interface.
+2025-09-01T17:49:44.289+07:00  INFO 23991 --- [springbootdemo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-01T17:49:44.304+07:00  INFO 23991 --- [springbootdemo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T17:49:44.304+07:00  INFO 23991 --- [springbootdemo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T17:49:44.346+07:00  INFO 23991 --- [springbootdemo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T17:49:44.346+07:00  INFO 23991 --- [springbootdemo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1853 ms
+2025-09-01T17:49:44.576+07:00  INFO 23991 --- [springbootdemo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-01T17:49:44.846+07:00  INFO 23991 --- [springbootdemo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:689e51cd-05ef-4fc5-9cbd-14cfdac14ef2 user=SA
+2025-09-01T17:49:44.848+07:00  INFO 23991 --- [springbootdemo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-01T17:49:44.890+07:00  INFO 23991 --- [springbootdemo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T17:49:44.935+07:00  INFO 23991 --- [springbootdemo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-01T17:49:44.963+07:00  INFO 23991 --- [springbootdemo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T17:49:45.234+07:00  INFO 23991 --- [springbootdemo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T17:49:45.295+07:00  INFO 23991 --- [springbootdemo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T17:49:46.021+07:00  INFO 23991 --- [springbootdemo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T17:49:46.068+07:00  INFO 23991 --- [springbootdemo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T17:49:46.370+07:00  INFO 23991 --- [springbootdemo] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-09-01T17:49:46.840+07:00  INFO 23991 --- [springbootdemo] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-09-01T17:49:46.915+07:00  INFO 23991 --- [springbootdemo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-01T17:49:46.929+07:00  INFO 23991 --- [springbootdemo] [main] c.e.s.SpringbootdemoApplication          : Started SpringbootdemoApplication in 4.999 seconds (process running for 5.815)
+2025-09-01T17:49:47.121+07:00  INFO 23991 --- [springbootdemo] [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-01T17:49:47.121+07:00  INFO 23991 --- [springbootdemo] [RMI TCP Connection(6)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-01T17:49:47.124+07:00  INFO 23991 --- [springbootdemo] [RMI TCP Connection(6)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-09-01T17:50:07.116+07:00  INFO 23991 --- [springbootdemo] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-01T17:50:09.128+07:00  INFO 23991 --- [springbootdemo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-01T17:50:09.134+07:00  INFO 23991 --- [springbootdemo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T17:50:09.140+07:00  INFO 23991 --- [springbootdemo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-01T17:50:09.142+07:00  INFO 23991 --- [springbootdemo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-01T17:50:11.211+07:00  INFO 24000 --- [springbootdemo] [main] c.e.s.SpringbootdemoApplication          : Starting SpringbootdemoApplication using Java 23.0.2 with PID 24000 (/Users/godfrey/IdeaProjects/Module-5-Courses/Module-5-Spring/springbootdemo/target/classes started by godfrey in /Users/godfrey/IdeaProjects/Module-5-Courses/Module-5-Spring/springbootdemo)
+2025-09-01T17:50:11.212+07:00  INFO 24000 --- [springbootdemo] [main] c.e.s.SpringbootdemoApplication          : The following 1 profile is active: "dev"
+2025-09-01T17:50:12.080+07:00  INFO 24000 --- [springbootdemo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T17:50:12.127+07:00  INFO 24000 --- [springbootdemo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2025-09-01T17:50:12.536+07:00  INFO 24000 --- [springbootdemo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-01T17:50:12.549+07:00  INFO 24000 --- [springbootdemo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T17:50:12.550+07:00  INFO 24000 --- [springbootdemo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-01T17:50:12.588+07:00  INFO 24000 --- [springbootdemo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T17:50:12.588+07:00  INFO 24000 --- [springbootdemo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1332 ms
+2025-09-01T17:50:12.793+07:00  INFO 24000 --- [springbootdemo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-01T17:50:12.994+07:00  INFO 24000 --- [springbootdemo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:8d5b2165-e2c4-4043-84a2-2b6e4a571a50 user=SA
+2025-09-01T17:50:12.996+07:00  INFO 24000 --- [springbootdemo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-01T17:50:13.038+07:00  INFO 24000 --- [springbootdemo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T17:50:13.084+07:00  INFO 24000 --- [springbootdemo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-01T17:50:13.115+07:00  INFO 24000 --- [springbootdemo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T17:50:13.392+07:00  INFO 24000 --- [springbootdemo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T17:50:13.456+07:00  INFO 24000 --- [springbootdemo] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-09-01T17:50:14.210+07:00  INFO 24000 --- [springbootdemo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T17:50:14.257+07:00  INFO 24000 --- [springbootdemo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T17:50:14.571+07:00  INFO 24000 --- [springbootdemo] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-09-01T17:50:15.059+07:00  INFO 24000 --- [springbootdemo] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-09-01T17:50:15.133+07:00  INFO 24000 --- [springbootdemo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-01T17:50:15.147+07:00  INFO 24000 --- [springbootdemo] [main] c.e.s.SpringbootdemoApplication          : Started SpringbootdemoApplication in 4.411 seconds (process running for 5.055)
+2025-09-01T17:50:15.371+07:00  INFO 24000 --- [springbootdemo] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-01T17:50:15.372+07:00  INFO 24000 --- [springbootdemo] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-01T17:50:15.374+07:00  INFO 24000 --- [springbootdemo] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-09-01T17:54:42.743+07:00  INFO 24000 --- [springbootdemo] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-01T17:54:44.792+07:00  INFO 24000 --- [springbootdemo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-01T17:54:44.833+07:00  INFO 24000 --- [springbootdemo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T17:54:44.847+07:00  INFO 24000 --- [springbootdemo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-01T17:54:44.853+07:00  INFO 24000 --- [springbootdemo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

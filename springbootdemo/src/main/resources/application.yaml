@@ -4,8 +4,28 @@ spring:
   jpa:
     open-in-view: false
 
+  profiles:
+    active: prod
+
 app:
   attribute1: value1
   attribute2:
     nestedAtt1: nestedValue1
     nestedAtt2: nestedValue2
+
+  myConstant1: constantValue
+
+logging:
+  level:
+    org.springframework.web: INFO
+    root: INFO
+    web: INFO
+    sql: DEBUG
+
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %p %m%n"
+  group:
+    userCrud: springbootdemo.controller, springbootdemo.model.repository
+
+
