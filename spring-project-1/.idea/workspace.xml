@@ -10,14 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e09a8195-1134-45da-a16f-67c2e110f8e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../spring-mvc-demo/springmvc/Content-negotiation.bru" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-mvc-demo/springmvc/bruno.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-test/src/main/java/springtest/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-test/src/main/java/springtest/repository/IUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-test/src/main/java/springtest/repository/UserRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-test/src/main/java/springtest/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-mvc-demo/src/main/java/springmvcdemo/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-mvc-demo/src/main/java/springmvcdemo/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-mvc-demo/src/test/java/springmvcdemo/StudentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-mvc-demo/src/test/java/springmvcdemo/StudentControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot/src/main/java/org/example/springboot/SpringbootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot/src/main/java/org/example/springboot/SpringbootApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springbootdemo/src/main/java/com/example/springbootdemo/controller/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springbootdemo/src/main/java/com/example/springbootdemo/controller/ConfigController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springbootdemo/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../springbootdemo/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +90,7 @@
     "ignore.preview.features.used": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/godfrey/IdeaProjects/Module-5-Courses/Module-5-Spring/spring-project-1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -223,8 +220,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
-        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
       </set>
     </attachedChunks>
   </component>
@@ -243,6 +240,7 @@
       <workItem from="1754838253588" duration="395000" />
       <workItem from="1754887153180" duration="12680000" />
       <workItem from="1754903201042" duration="2720000" />
+      <workItem from="1756674620091" duration="13000" />
     </task>
     <servers />
   </component>
