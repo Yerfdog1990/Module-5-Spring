@@ -35,7 +35,7 @@
             </div>
             <div th:if="${param.error}" style="color: red; margin-top: 10px;">
                 Authentication failed. Please check your credentials.
-                <div th:if="${session.SPRING_SECURITY_LAST_EXCEPTION}" th:remove="tag">
+                <div th:if="${session != null and session.SPRING_SECURITY_LAST_EXCEPTION != null}" th:remove="tag">
                     Error: <span th:text="${session.SPRING_SECURITY_LAST_EXCEPTION.message}"></span>
                 </div>
             </div>
