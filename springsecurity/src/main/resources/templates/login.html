@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Spring Security Demo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        
+        <div th:if="${param.error}" class="error">
+            Invalid username or password. Please try again.
+        </div>
+        
+        <div th:if="${param.logout}" class="success">
+            You have been successfully logged out.
+        </div>
+        
+        <form th:action="@{/login}" method="post">
+            <div th:if="${_csrf != null}">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            </div>
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="user" required autofocus>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" value="password" required>
+            </div>
+            <div>
+                <input type="submit" value="Sign In">
+            </div>
+            <div th:if="${param.error}" style="color: red; margin-top: 10px;">
+                Authentication failed. Please check your credentials.
+                <div th:if="${session.SPRING_SECURITY_LAST_EXCEPTION}" th:remove="tag">
+                    Error: <span th:text="${session.SPRING_SECURITY_LAST_EXCEPTION.message}"></span>
+                </div>
+            </div>
+        </form>
+        
+        <div class="info">
+            <p>Try these credentials:</p>
+            <ul>
+                <li>Regular User: <strong>user</strong> / password</li>
+                <li>Admin User: <strong>admin</strong> / admin</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

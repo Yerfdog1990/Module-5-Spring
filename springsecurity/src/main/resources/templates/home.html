@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Spring Security Demo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Home Page!</h1>
+        
+        <div class="user-info" sec:authorize="isAuthenticated()">
+            <p>Logged in as: <span sec:authentication="name">User</span></p>
+            <p>Roles: <span sec:authentication="authorities">[USER]</span></p>
+        </div>
+        
+        <div class="actions">
+            <a th:href="@{/admin}" class="btn" sec:authorize="hasRole('ADMIN')">Admin Dashboard</a>
+            
+            <form th:action="@{/logout}" method="post" class="logout-form">
+                <input type="submit" value="Sign Out" class="btn">
+            </form>
+        </div>
+        
+        <div class="content">
+            <h2>Welcome to the Spring Security Demo</h2>
+            <p>This is a protected page that any authenticated user can access.</p>
+            <div sec:authorize="hasRole('ADMIN')">
+                <p>You have <strong>ADMIN</strong> privileges and can access the admin section.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
