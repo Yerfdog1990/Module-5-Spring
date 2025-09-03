@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS customers;
+
+CREATE TABLE customers (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255),
+    age INTEGER);
