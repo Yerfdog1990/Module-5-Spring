@@ -1,0 +1,2 @@
+regex:\bclient-secret\b\s*:\s*.*==>client-secret: REDACTED
+regex:\bclient-id\b\s*:\s*.*==>client-id: REDACTED
