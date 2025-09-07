@@ -1,9 +1,36 @@
-.idea
-out
-target
+# IDE specific files
+.idea/
 *.iml
-logs
-attachments
+out/
+
+# Build files
+target/
+build/
+
+# Logs
+logs/
+*.log
+
+# Application secrets - exclude actual secret files but keep the template
+**/application-secrets.yaml
+**/application-secrets.yml
+**/application-secrets.properties
+!**/application-secrets*.template
+
+# Environment variables
+.env
+*.env
+
+# Local development files
+*.swp
+*.swo
+.DS_Store
+
+# Project specific
+attachments/
 *.patch
 
-
+# Temp files
+*.tmp
+*.bak
+*.backup
