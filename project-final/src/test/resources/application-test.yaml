@@ -3,8 +3,6 @@ spring:
   sql:
     init:
       mode: never
-  init:
-    mode: always
   datasource:
     url: jdbc:postgresql://localhost:5433/jira-test
     username: jira
