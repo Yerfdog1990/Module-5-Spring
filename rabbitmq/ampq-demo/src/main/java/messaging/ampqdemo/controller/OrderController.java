@@ -1,11 +1,13 @@
 package messaging.ampqdemo.controller;
 
+import jakarta.validation.Valid;
 import messaging.ampqdemo.service.OrderCreatedEvent;
 import messaging.ampqdemo.service.OrderCreatedListener;
 import messaging.ampqdemo.service.OrderEventPublisher;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,8 +24,12 @@ public class OrderController {
     }
 
     @PostMapping
-    public ResponseEntity<CreateOrderResponse> postOrder(CreateOderRequest request){
-        OrderCreatedEvent orderCreatedEvent = new OrderCreatedEvent(request.getOrderId(), request.getCustomerEmail(), request.getAmount());
+    public ResponseEntity<CreateOrderResponse> postOrder(@RequestBody @Valid CreateOrderRequest request){
+        OrderCreatedEvent orderCreatedEvent = new OrderCreatedEvent(
+                request.getOrderId(),
+                request.getCustomerEmail(),
+                request.getAmount()
+        );
         orderEventPublisher.publishOrderEvent(orderCreatedEvent);
         return ResponseEntity.accepted().body(new CreateOrderResponse("ACCEPTED", "Order created successfully"));
     }

@@ -27,6 +27,10 @@ public class OrderCreatedListener {
             log.warn("Received OrderCreatedEvent with null/blank orderId; event={}, ignoring message.", event);
             return;
         }
+        if (amount == null) {
+            log.warn("Received OrderCreatedEvent with null amount; orderId={}, event={}, ignoring message.", orderId, event);
+            return;
+        }
 
         readModel.put(orderId, amount);
         log.info("Read model updated: {}", readModel);
