@@ -34,3 +34,10 @@ attachments/
 *.tmp
 *.bak
 *.backup
+
+# PostgreSQL data directories
+/pgdata/
+/pgdata-test/
+**/pgdata/
+**/pgdata-test/
+

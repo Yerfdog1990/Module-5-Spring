@@ -8,8 +8,11 @@ app:
     max-pool-size: 100
 
 spring:
-  init:
-    mode: never
+  config:
+    import:
+      - classpath:application-secrets.yaml
+      - optional:file:./application-secrets.yaml
+
   jpa:
     show-sql: true
     open-in-view: false
@@ -26,9 +29,9 @@ spring:
         # https://stackoverflow.com/questions/21257819/what-is-the-difference-between-hibernate-jdbc-fetch-size-and-hibernate-jdbc-batc
         jdbc.batch_size: 20
   datasource:
-    url: jdbc:postgresql://localhost:5432/jira
-    username: jira
-    password: CodeGymJira
+    url: ${DB_URL:redacted}
+    username: ${DB_USERNAME:redacted}
+    password: ${DB_PASSWORD:redacted}
 
   liquibase:
     changeLog: "classpath:db/changelog.sql"
@@ -51,23 +54,23 @@ spring:
       client:
         registration:
           github:
-            client-id: REDACTED
-            client-secret: REDACTED
+            client-id: ${GITHUB_CLIENT_ID:redacted}
+            client-secret: ${GITHUB_CLIENT_SECRET:redacted}
             scope:
               - email
           google:
-            client-id: REDACTED
-            client-secret: REDACTED
+            client-id: ${GOOGLE_CLIENT_ID:redacted}
+            client-secret: ${GOOGLE_CLIENT_SECRET:redacted}
             scope:
               - email
               - profile
           facebook:
-            client-id: REDACTED
-            client-secret: REDACTED
+            client-id: ${FACEBOOK_CLIENT_ID:redacted}
+            client-secret: ${FACEBOOK_CLIENT_SECRET:redacted}
             scope: email
           gitlab:
-            client-id: REDACTED
-            client-secret: REDACTED
+            client-id: ${GITLAB_CLIENT_ID:redacted}
+            client-secret: ${GITLAB_CLIENT_SECRET:redacted}
             client-name: GitLab
             redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
             authorization-grant-type: authorization_code
@@ -96,8 +99,8 @@ spring:
             enable: true
           auth: true
     host: smtp.gmail.com
-    username: cgjirafinal@gmail.com
-    password: YJMN4dJg8Lmo
+    username: ${MAIL_USERNAME:redacted}
+    password: ${MAIL_PASSWORD:redacted}
     port: 587
   thymeleaf.check-template-location: false
 
