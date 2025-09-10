@@ -22,7 +22,7 @@ or
 `sudo docker pull postgres` - Install postgres image from docker hub repository
 
   ```
-  sudo docker run \
+ 	sudo docker run \
 	-p 5432:5432 \
 	--name postgres-db \
 	-e POSTGRES_USER=jira \
@@ -30,7 +30,7 @@ or
 	-e POSTGRES_DB=jira \
 	-e PGDATA=/var/lib/postgresql/data/pgdata \
 	-v ./pgdata:/var/lib/postgresql/data \
-	-d postgres
+	-d postgres:17
   ```
 
 -- Launch postgres in docker container, where:

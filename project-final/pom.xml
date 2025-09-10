@@ -228,6 +228,7 @@
                             <artifactId>lombok-mapstruct-binding</artifactId>
                         </exclude>
                     </excludes>
+                    <jvmArguments>--enable-native-access=ALL-UNNAMED</jvmArguments>
                 </configuration>
             </plugin>
             <plugin>
@@ -235,7 +236,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <argLine>-Dfile.encoding=UTF-8 --enable-native-access=ALL-UNNAMED</argLine>
                 </configuration>
             </plugin>
         </plugins>

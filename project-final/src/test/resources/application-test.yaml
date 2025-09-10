@@ -4,6 +4,8 @@ spring:
     init:
       mode: never
   datasource:
-    url: jdbc:postgresql://localhost:5433/jira-test
+    # Use Testcontainers JDBC URL for ephemeral PostgreSQL during tests. No local DB needed.
+    url: jdbc:tc:postgresql:17:///jira-test
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
     username: jira
     password: CodeGymJira
