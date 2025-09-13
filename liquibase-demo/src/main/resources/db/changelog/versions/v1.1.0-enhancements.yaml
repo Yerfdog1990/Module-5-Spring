@@ -1,0 +1,143 @@
+databaseChangeLog:
+  # 1. Adding indexes for better query performance
+  - changeSet:
+      id: 1.1.0-1
+      author: your.name
+      changes:
+        - createIndex:
+            indexName: idx_posts_user_id
+            tableName: posts
+            columns:
+              - column:
+                  name: user_id
+                  type: bigint
+
+  # 2. Adding a new status column with a default value
+  - changeSet:
+      id: 1.1.0-2
+      author: your.name
+      changes:
+        - addColumn:
+            tableName: posts
+            columns:
+              - column:
+                  name: status
+                  type: varchar(20)
+                  defaultValue: 'DRAFT'
+                  constraints:
+                    nullable: false
+
+  # 3. Adding a new tags table with many-to-many relationship to posts
+  - changeSet:
+      id: 1.1.0-3
+      author: your.name
+      changes:
+        - createTable:
+            tableName: tags
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    unique: true
+                    nullable: false
+
+        - createTable:
+            tableName: post_tags
+            columns:
+              - column:
+                  name: post_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_post_tags_post
+                    references: posts(id)
+              - column:
+                  name: tag_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_post_tags_tag
+                    references: tags(id)
+        - addPrimaryKey:
+            columnNames: post_id, tag_id
+            constraintName: pk_post_tags
+            tableName: post_tags
+
+  # 4. Data migration: Add initial admin user (only in dev/test environments)
+  - changeSet:
+      id: 1.1.0-4
+      author: your.name
+      context: dev,test  # Only runs in dev and test environments
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: admin
+              - column:
+                  name: email
+                  value: admin@example.com
+              - column:
+                  name: password_hash
+                  value: $2a$10$XptfskLsT1SW/bJ21XzMHeK0rf6H8/nuwonZxJVDX6IfHhIzFRSuW  # 'admin123' hashed
+
+  # 5. Add audit columns to posts table (with conditional logic for different databases)
+  - changeSet:
+      id: 1.1.0-5
+      author: your.name
+      changes:
+        - addColumn:
+            tableName: posts
+            columns:
+              - column:
+                  name: created_by
+                  type: varchar(50)
+                  defaultValue: "system"
+              - column:
+                  name: last_modified_by
+                  type: varchar(50)
+                  defaultValue: "system"
+              - column:
+                  name: last_modified_at
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+  # 6. Add full-text search index (PostgreSQL specific)
+  - changeSet:
+      id: 1.1.0-6
+      author: your.name
+      dbms: postgresql  # Only runs on PostgreSQL
+      changes:
+        - sql:
+            sql: >
+              CREATE INDEX idx_posts_search ON posts USING GIN (to_tsvector('english', title || ' ' || content));
+
+  # 7. Add validation constraints
+  - changeSet:
+      id: 1.1.0-7
+      author: your.name
+      changes:
+        - addCheckConstraint:
+            constraintName: ck_posts_status
+            tableName: posts
+            columnName: status
+            constraintBody: "status IN ('DRAFT', 'PUBLISHED', 'ARCHIVED')"
+
+  # 8. Add comments to tables and columns
+  - changeSet:
+      id: 1.1.0-8
+      author: your.name
+      changes:
+        - sql:
+            sql: >
+              COMMENT ON TABLE posts IS 'Stores blog post information';
+              COMMENT ON COLUMN posts.status IS 'Current status of the post (DRAFT, PUBLISHED, ARCHIVED)';
+              COMMENT ON COLUMN posts.created_at IS 'Timestamp when the post was first created';

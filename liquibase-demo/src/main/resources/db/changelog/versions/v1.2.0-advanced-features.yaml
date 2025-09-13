@@ -1,0 +1,180 @@
+databaseChangeLog:
+  # 1. Example of using preconditions
+  - changeSet:
+      id: 1.2.0-1
+      author: Yerfdog1990
+      preConditions:
+        - onFail: WARN
+        - onError: HALT
+        - not:
+            tableExists:
+              tableName: audit_logs
+      changes:
+        - createTable:
+            tableName: audit_logs
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: action
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: entity_type
+                  type: varchar(100)
+              - column:
+                  name: entity_id
+                  type: bigint
+              - column:
+                  name: performed_by
+                  type: bigint
+              - column:
+                  name: performed_at
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+
+  # 2. Complex rollback example
+  - changeSet:
+      id: 1.2.0-2
+      author: your.name
+      changes:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: last_login_at
+                  type: timestamp
+      rollback:
+        - dropColumn:
+            tableName: users
+            columns:
+              - name: last_login_at
+
+  # 3. Data migration with custom SQL and rollback
+  - changeSet:
+      id: 1.2.0-3
+      author: your.name
+      changes:
+        - sql:
+            sql: >
+              INSERT INTO audit_logs (action, entity_type, entity_id, performed_by)
+              SELECT 'USER_CREATED', 'USER', id, id
+              FROM users
+              WHERE created_at > NOW() - INTERVAL '1 day'
+            splitStatements: true
+            endDelimiter: ;
+      rollback:
+        - sql:
+            sql: >
+              DELETE FROM audit_logs 
+              WHERE action = 'USER_CREATED' 
+              AND performed_at > NOW() - INTERVAL '1 day';
+
+  # 4. Conditional changes based on database type
+  - changeSet:
+      id: 1.2.0-4
+      author: your.name
+      changes:
+        - sql:
+            dbms: postgresql
+            sql: >
+              CREATE OR REPLACE FUNCTION update_modified_column()
+              RETURNS TRIGGER AS $$
+              BEGIN
+                 NEW.last_modified_at = NOW();
+                 RETURN NEW;
+              END;
+              $$ LANGUAGE plpgsql;
+            splitStatements: true
+            endDelimiter: ;
+        - sql:
+            dbms: mysql
+            sql: >
+              CREATE TRIGGER update_posts_modtime
+              BEFORE UPDATE ON posts
+              FOR EACH ROW
+              SET NEW.last_modified_at = NOW();
+            splitStatements: true
+            endDelimiter: ;
+
+  # 5. Using preconditions to check data before making changes
+  - changeSet:
+      id: 1.2.0-5
+      author: your.name
+      preConditions:
+        - sqlCheck:
+            expectedResult: "0"
+            sql: >
+              SELECT COUNT(*)
+              FROM information_schema.tables 
+              WHERE table_schema = 'public' 
+              AND table_name = 'deprecated_posts';
+      changes:
+        - createTable:
+            tableName: deprecated_posts
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+              - column:
+                  name: reason
+                  type: varchar(200)
+
+  # 6. Complex rollback with multiple statements
+  - changeSet:
+      id: 1.2.0-6
+      author: your.name
+      changes:
+        - sql:
+            sql: >
+              CREATE OR REPLACE FUNCTION archive_old_posts()
+              RETURNS TRIGGER AS $$
+              BEGIN
+                IF OLD.status = 'ARCHIVED' THEN
+                  INSERT INTO deprecated_posts (id, reason)
+                  VALUES (OLD.id, 'Archived on ' || CURRENT_TIMESTAMP);
+                END IF;
+                RETURN OLD;
+              END;
+              $$ LANGUAGE plpgsql;
+              
+              CREATE TRIGGER trg_archive_posts
+              AFTER UPDATE OF status ON posts
+              FOR EACH ROW
+              WHEN (OLD.status != 'ARCHIVED' AND NEW.status = 'ARCHIVED')
+              EXECUTE FUNCTION archive_old_posts();
+            splitStatements: true
+            endDelimiter: ;
+      rollback:
+        - sql:
+            sql: >
+              DROP TRIGGER IF EXISTS trg_archive_posts ON posts;
+              DROP FUNCTION IF EXISTS archive_old_posts();
+            splitStatements: true
+            endDelimiter: ;
+
+  # 7. Using variables in changesets
+  - changeSet:
+      id: 1.2.0-7
+      author: your.name
+      changes:
+        - sql:
+            sql: >
+              COMMENT ON TABLE ${table.name} IS '${table.comment}';
+            params:
+              table.name: posts
+              table.comment: Blog posts with versioning and audit information
+        - sql:
+            sql: >
+              COMMENT ON COLUMN ${table.name}.${column.name} IS '${column.comment}';
+            params:
+              table.name: posts
+              column.name: status
+              column.comment: 'Current status: DRAFT, PUBLISHED, or ARCHIVED'
