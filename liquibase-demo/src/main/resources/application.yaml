@@ -1,0 +1,91 @@
+# Common Spring configuration
+spring:
+  application:
+    name: liquibase-demo
+  jpa:
+    hibernate:
+      ddl-auto: none
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: true
+          use_sql_comments: true
+          jdbc:
+            lob:
+              non_contextual_creation: true
+
+  # Database Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/liquibase-db
+    username: myuser
+    password: mypassword
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 10
+      minimum-idle: 2
+      pool-name: HikariCP
+
+# Environment-specific overrides
+---
+# Development environment (default)
+spring:
+  config.activate.on-profile: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/liquibase-db
+    username: myuser
+    password: mypassword
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    user: myuser
+    password: mypassword
+    url: jdbc:postgresql://localhost:5432/liquibase-db
+    parameters:
+      environment: dev
+    drop-first: false
+    show-sql: true
+    log-level: debug
+
+---
+# Test environment
+spring:
+  config.activate.on-profile: test
+  datasource:
+    url: jdbc:postgresql://localhost:5432/liquibase-db
+    username: myuser
+    password: mypassword
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    user: myuser
+    password: mypassword
+    url: jdbc:postgresql://localhost:5432/liquibase-db
+    contexts: test
+    parameters:
+      environment: test
+    drop-first: true  # Clean database for tests
+
+---
+# Production environment
+spring:
+  config.activate.on-profile: prod
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/liquibase-db}
+    username: ${DATABASE_USERNAME:myuser}
+    password: ${DATABASE_PASSWORD:mypassword}
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    url: ${spring.datasource.url}
+    contexts: prod
+    parameters:
+      environment: prod
+    drop-first: false
+    validate-on-migrate: true
+    rollback-file: /var/log/liquibase-rollback.sql
