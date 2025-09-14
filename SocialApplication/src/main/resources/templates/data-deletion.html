@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Data Deletion Instructions</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" th:remove="tag" />
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="h3 mb-0">Data Deletion Instructions</h1>
+                    </div>
+                    <div class="card-body">
+                        <h2>How to Request Data Deletion</h2>
+                        <p>If you would like to delete your account and associated data from our system, please follow these steps:</p>
+                        
+                        <div class="alert alert-info">
+                            <h5>For Logged-in Users:</h5>
+                            <ol>
+                                <li>Log in to your account</li>
+                                <li>Go to your account settings</li>
+                                <li>Click on "Delete Account"</li>
+                                <li>Confirm your choice</li>
+                            </ol>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <h5>If You Can't Access Your Account:</h5>
+                            <p>Please send an email to <strong>privacy@yourapp.com</strong> with the subject line "Data Deletion Request" and include the following information:</p>
+                            <ul>
+                                <li>Your full name</li>
+                                <li>Email address associated with the account</li>
+                                <li>Reason for deletion (optional)</li>
+                            </ul>
+                        </div>
+
+                        <h3>What Happens After Deletion</h3>
+                        <ul>
+                            <li>Your account will be deactivated immediately</li>
+                            <li>Your personal data will be permanently deleted within 30 days</li>
+                            <li>Some anonymized data may be retained for legal or operational purposes</li>
+                        </ul>
+
+                        <div class="mt-4">
+                            <a href="/" class="btn btn-primary">Return to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/webjars/jquery/jquery.min.js" th:remove="tag"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js" th:remove="tag"></script>
+</body>
+</html>
