@@ -3,7 +3,7 @@ package com.codegym.jira.ref;
 import com.codegym.jira.bugtracking.ObjectType;
 import com.codegym.jira.ref.internal.ReferenceMapper;
 import com.codegym.jira.ref.internal.ReferenceRepository;
-import jakarta.annotation.PostConstruct;
+// Removed PostConstruct in favor of ApplicationRunner
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.NonNull;
@@ -51,8 +51,7 @@ public class ReferenceService {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
-    @PostConstruct
-    void initialize() {
+    public void initialize() {
         log.info("init loading");
         List<RefTo> references = mapper.toToList(repository.findAllByOrderByIdAsc());
         refSelect = references.stream()

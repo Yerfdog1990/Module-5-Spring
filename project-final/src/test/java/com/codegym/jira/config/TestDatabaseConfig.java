@@ -19,7 +19,7 @@ public class TestDatabaseConfig {
     public DataSource h2DataSource(){
         return DataSourceBuilder.create()
                 .driverClassName("org.h2.Driver")
-                .url("jdbc:h2:mem:jira-test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false")
+                .url("jdbc:h2:mem:jira-test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=true")
                 .username("sa")
                 .password("")
                 .build();
