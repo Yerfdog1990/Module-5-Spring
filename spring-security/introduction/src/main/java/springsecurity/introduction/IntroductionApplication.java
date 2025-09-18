@@ -1,13 +1,13 @@
-package springsecurity.jwt;
+package springsecurity.introduction;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JwtApplication {
+public class IntroductionApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JwtApplication.class, args);
+        SpringApplication.run(IntroductionApplication.class, args);
     }
 
 }

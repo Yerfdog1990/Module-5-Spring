@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>springsecurity</groupId>
-    <artifactId>jwt</artifactId>
+    <artifactId>introduction</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>jwt</name>
-    <description>jwt</description>
+    <name>introduction</name>
+    <description>introduction</description>
     <url/>
     <licenses>
         <license/>
