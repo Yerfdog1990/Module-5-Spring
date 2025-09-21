@@ -5,9 +5,17 @@ meta {
 }
 
 put {
-  url: 
-  body: none
+  url: http://localhost:8080/users/update/5f4e141d-4a13-4ce4-9405-9eae1adeac0c
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "name":"Getrude Scholten",
+    "email":"gscholten.@example.com",
+    "password":"getrudepass"
+  }
 }
 
 settings {
