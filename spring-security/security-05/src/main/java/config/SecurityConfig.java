@@ -43,7 +43,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(customizer -> {
             customizer
-                    .requestMatchers("/", "/hi", "/hello", "/register", "/registered-user", "/resources/**", "/WEB-INF/views/**").permitAll()
+                    .requestMatchers("/", "/hi", "/hello", "/register", "/registered-user", "/resources/**").permitAll()
                     .anyRequest().authenticated();
         });
         http.csrf(AbstractHttpConfigurer::disable);
