@@ -5,17 +5,20 @@ meta {
 }
 
 post {
-  url: http://localhost:8080/users/create
+  url: 
   body: json
-  auth: inherit
+  auth: basic
+}
+
+auth:basic {
+  username: Owino
+  password: 
 }
 
 body:json {
   {
-    "name":"Owino",
-    "email":"owino@example.com",
-    "password":"owinopass",
-    "role":"USER"
+    "username":"Owino",
+    "password":"owinopass"
   }
 }
 
